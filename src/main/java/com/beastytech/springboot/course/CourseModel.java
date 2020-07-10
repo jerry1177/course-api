@@ -1,39 +1,22 @@
 package com.beastytech.springboot.course;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-import com.beastytech.springboot.topic.Topic;
-
-@Entity
-@Table(name="course")
-public class Course {
-	@Id
+public class CourseModel {
 	private String id;
 	private String name;
 	private String description;
 	
-	@ManyToOne
-	@JoinColumn(name="topic_id")
-	private Topic topic;
-	
-	
-	public Course() {
+	public CourseModel() {
 		super();
 		this.id = null;
 		this.name = null;
 		this.description = null;
 	}
 	
-	public Course(String id, String name, String description, String topicId) {
+	public CourseModel(String id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.topic = new Topic(topicId, "", "");
 	}
 	public String getId() {
 		return id;
@@ -53,11 +36,4 @@ public class Course {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Topic getTopic() {
-		return topic;
-	}
-	public void setTopic(Topic topic) {
-		this.topic = topic;
-	}
-	
 }

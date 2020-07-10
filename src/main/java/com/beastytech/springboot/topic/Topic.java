@@ -1,14 +1,25 @@
 package com.beastytech.springboot.topic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.beastytech.springboot.course.Course;
 
 @Entity
-public class Topic  {
+@Table(name="topic")
+public class Topic {
 	@Id
 	private String id;
 	private String name;
 	private String description;
+	
+	@OneToMany(mappedBy="topic")
+	List<Course> courses;
 	
 	
 	public Topic() {
@@ -16,6 +27,7 @@ public class Topic  {
 		this.id = null;
 		this.name = null;
 		this.description = null;
+		courses = new ArrayList<>();
 	}
 	
 	public Topic(String id, String name, String description) {
@@ -23,6 +35,7 @@ public class Topic  {
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		courses = new ArrayList<>();
 	}
 	public String getId() {
 		return id;
