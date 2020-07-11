@@ -5,11 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+import com.beastytech.springboot.utilities.DAOUtilities;
+
 @SpringBootApplication
 public class CourseApiApp extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CourseApiApp.class, args);
+		//new DAOUtilities().printValues();
 	
 	}
 	
