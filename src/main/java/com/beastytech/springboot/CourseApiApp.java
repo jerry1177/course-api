@@ -12,8 +12,6 @@ public class CourseApiApp extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CourseApiApp.class, args);
-		//new DAOUtilities().printValues();
-	
 	}
 	
 	@Override

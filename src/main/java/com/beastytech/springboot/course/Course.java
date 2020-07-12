@@ -7,8 +7,6 @@ public class Course {
 	private String name;
 	private String description;
 	
-	
-	
 	public Course() {
 		super();
 		this.id = null;
@@ -16,7 +14,7 @@ public class Course {
 		this.description = null;
 	}
 	
-	public Course(String id, String name, String description, String topicId) {
+	public Course(String id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
